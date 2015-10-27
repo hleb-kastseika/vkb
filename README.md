@@ -12,6 +12,7 @@
 - Java 8
 - Apache Ant (I use 1.9.5 version, didn't check with previous)
 - some Windows OS (I developed it on Windows and hardcoded windows path separator "\". So, for correct running on other OS, modify it).
+- an account in vk.com that is not a pity to lose (admins are struggling with fake accounts and it can be banned)
 
 ### How to build, configure and run
 For **building the project** use Apache Ant. I don't use any dependency management tools (like Ivy or Maven, so all libraries that you need are placed in *lib* directory). Go to the root project directory and run `ant dist` command. It will generate zip archive in *dist* directory. Extract it somewhere and script is almost ready for running (just need to link it with your VK account and setup some properties).
