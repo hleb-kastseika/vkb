@@ -1,0 +1,9 @@
+# Generated files
+/bin/
+/dist/
+
+# Eclipse project files
+.classpath
+.project
+.metadata
+.settings
