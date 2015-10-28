@@ -29,15 +29,11 @@ The next thing you need to do - to configure some script properties. Go to *conf
 - **communities.search.words** - comma-separated list of key words, which will be used for searching of competition communities (e.g. *competition,gifts,prizes*). Since most vk.com users to communicate in russian, I suggest to use keywords in russian. And since property-files has ASCII format it would look something like *\u043A\u043E\u043D\u043A\u0443\u0440\u0441,\u0440\u043E\u0437\u044B\u0433\u0440\u044B\u0448* (that means *конкурс,розыгрыш*).
 -  **post.classification.model** - the model that allow identify competition posts. It has such structure: 
 ```
-#!json
-
 {"classification_groups":["key-word1,key-word2,key-word3","key-word4,key-word5,key-word6"]}
 ```
 which on logical level looks like 
 
 ```
-#!java
-
 (postMessage.contains(key-word1)||postMessage.contains(key-word2)||postMessage.contains(key-word3))
 &&
 (postMessage.contains(key-word4)||postMessage.contains(key-word5)||postMessage.contains(key-word6))
