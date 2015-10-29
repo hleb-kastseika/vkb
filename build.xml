@@ -6,7 +6,7 @@
 	<property name="lib.dir" value="lib"/>
 	<property name="src.dir" value="src"/>
 	<property name="conf.dir" value="conf"/>
-	<property name="main-class" value="com.last_khadjiit.vkb.VKB"/>
+	<property name="main-class" value="com.last_khajiit.vkb.VKB"/>
 	
 	<tstamp>
 		<format property="current.date.time" pattern="dd-MM-yyyy--HH-mm-ss"/>
