@@ -25,12 +25,13 @@ public abstract class BehaviourStrategy {
 	protected static final String NAME_PROPERTY = "name";
 	protected static final String ID_PROPERTY = "id";
 	protected static final String TYPE_PROPERTY = "type";
-	
-	public void execute(){};
-	
-	public void sleepBetweenRequests(){
+
+	public abstract void execute();
+
+	public void sleepBetweenRequests() {
 		try {
-			Thread.sleep(Integer.valueOf(propertyManager.getProp(Properties.REQUESTS_DELAY, propertyManager.DEFAULT_REQUESTS_DELAY)));
+			Thread.sleep(Integer.valueOf(
+					propertyManager.getProp(Properties.REQUESTS_DELAY, propertyManager.DEFAULT_REQUESTS_DELAY)));
 		} catch (NumberFormatException | InterruptedException e) {
 			Logger.error(e);
 		}

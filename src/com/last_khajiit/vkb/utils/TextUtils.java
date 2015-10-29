@@ -20,8 +20,8 @@ public class TextUtils {
 	private final static String USER_ID_PATTERN = "id\\d+";
 	private final static String CLASSIFICATION_GROUPS = "classification_groups";
 	private final static String COMMA_SEPARATOR = ",";
-	
-	public static String cp1251ToUTF(String cp1251String){
+
+	public static String cp1251ToUTF(String cp1251String) {
 		String utfString = null;
 		try {
 			utfString = new String(cp1251String.getBytes(CP1251_ENCODING), UTF8_ENCODING);
@@ -29,9 +29,9 @@ public class TextUtils {
 			Logger.error(e);
 		}
 		return utfString;
-	}	
-	
-	public static String utfToCp1251(String utfString){
+	}
+
+	public static String utfToCp1251(String utfString) {
 		String cp1251String = null;
 		try {
 			cp1251String = new String(utfString.getBytes(UTF8_ENCODING), CP1251_ENCODING);
@@ -39,54 +39,60 @@ public class TextUtils {
 			Logger.error(e);
 		}
 		return cp1251String;
-	}	
-	
-	public static boolean validateMessage(String postMessage){
+	}
+
+	public static boolean validateMessage(String postMessage) {
 		boolean isCompetition = false;
 		boolean postContainsKeyWords = classifyPostAsCompetition(postMessage);
-				
-		if(postContainsKeyWords && !BlackWordsDetector.getInstance().isContainedInBlackWordsList(postMessage)) isCompetition = true;
-		
-		//TODO add expiration date checking?!
-		if(isCompetition){			
+
+		if (postContainsKeyWords && !BlackWordsDetector.getInstance().isContainedInBlackWordsList(postMessage))
+			isCompetition = true;
+
+		// TODO add expiration date checking?!
+		if (isCompetition) {
 			Set<String> communitiesSet = extractIds(postMessage, COMMUNITY_ID_PATTERN, 4);
-			if(!communitiesSet.isEmpty()) PostponedItemsHandler.getInstance().putToPostponedCommunities(communitiesSet);
-						
+			if (!communitiesSet.isEmpty())
+				PostponedItemsHandler.getInstance().putToPostponedCommunities(communitiesSet);
+
 			Set<String> usersSet = extractIds(postMessage, USER_ID_PATTERN, 2);
-			if(!usersSet.isEmpty()) PostponedItemsHandler.getInstance().putToPostponedUsers(usersSet);
-		}		
+			if (!usersSet.isEmpty())
+				PostponedItemsHandler.getInstance().putToPostponedUsers(usersSet);
+		}
 		return isCompetition;
 	}
-	
-	private static Set<String> extractIds(String post, String patternStr, int substrIndx){
+
+	private static Set<String> extractIds(String post, String patternStr, int substrIndx) {
 		Matcher matcher;
-		Pattern userPattern = Pattern.compile(patternStr);			
+		Pattern userPattern = Pattern.compile(patternStr);
 		matcher = userPattern.matcher(post);
 		Set<String> idSet = new HashSet<String>();
-		while (matcher.find()){	
+		while (matcher.find()) {
 			idSet.add(matcher.group().substring(substrIndx));
-		}		
+		}
 		return idSet;
 	}
-	
-	public static boolean classifyPostAsCompetition(String post){
+
+	public static boolean classifyPostAsCompetition(String post) {
 		try {
 			String classificationModel = PropertiesManager.getInstance().getProp(Properties.POST_CLASSIFICATION_MODEL);
 			JSONObject jsonClassificationModel = new JSONObject(classificationModel);
-			
+
 			JSONArray keyWordsGroups = jsonClassificationModel.getJSONArray(CLASSIFICATION_GROUPS);
 			boolean[] allKeyWordsGroupFlags = new boolean[keyWordsGroups.length()];
-			for(int i=0; i<keyWordsGroups.length(); i++){
+			for (int i = 0; i < keyWordsGroups.length(); i++) {
 				ArrayList<String> keyWordsList = new ArrayList<String>();
 				keyWordsList.addAll(Arrays.asList(keyWordsGroups.get(i).toString().split(COMMA_SEPARATOR)));
 				allKeyWordsGroupFlags[i] = false;
-				for(String keyWord: keyWordsList){
-					if(post.contains(keyWord)) allKeyWordsGroupFlags[i] = true;
+				for (String keyWord : keyWordsList) {
+					if (post.contains(keyWord))
+						allKeyWordsGroupFlags[i] = true;
 				}
 			}
-			
-			for(boolean kw : allKeyWordsGroupFlags) if(!kw) return false;
-			return true;			
+
+			for (boolean kw : allKeyWordsGroupFlags)
+				if (!kw)
+					return false;
+			return true;
 		} catch (JSONException e) {
 			Logger.error(e);
 		}
