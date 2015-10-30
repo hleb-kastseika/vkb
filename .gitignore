@@ -1,6 +1,6 @@
 # Generated files
-/bin/
-/dist/
+/.gradle/
+/build/
 
 # Eclipse project files
 .classpath

@@ -12,12 +12,12 @@ Script allows you to automate the searching and participation in random reposts 
 
 ### Requirements for building and running
 - Java 8
-- Apache Ant (I use 1.9.5 version, didn't check with previous)
+- Gradle (I use 2.8 version, didn't check with previous)
 - some Windows OS (I developed it on Windows and hardcoded windows path separator "\". So, for correct running on other OS, modify it. I'll fix it a bit later).
 - an account in vk.com that is not a pity to lose (admins are struggling with fake accounts and it can be banned)
 
 ### How to build, configure and run
-For **building the project** use Apache Ant. I don't use any dependency management tools (like Ivy or Maven, so all libraries that you need are placed in *lib* directory). Go to the root project directory and run `ant dist` command. It will generate zip archive in *dist* directory. Extract it somewhere and script is almost ready for running (just need to link it with your VK account and setup some properties).
+For **building the project** use Gradle. Go to the root project directory and run `gradle dist` command. It will generate zip archive in *build\dist* directory. Extract it somewhere and script is almost ready for running (just need to link it with your VK account and setup some properties).
 
 Now about the **configuration**.
 First, you need to have an account in vk.com, which you'll use for running the script. I would recommend to use an account that is not a pity to lose, because it can be banned for "strange activity".
@@ -29,11 +29,15 @@ The next thing you need to do - to configure some script properties. Go to *conf
 - **communities.search.words** - comma-separated list of key words, which will be used for searching of competition communities (e.g. *competition,gifts,prizes*). Since most vk.com users to communicate in russian, I suggest to use keywords in russian. And since property-files has ASCII format it would look something like *\u043A\u043E\u043D\u043A\u0443\u0440\u0441,\u0440\u043E\u0437\u044B\u0433\u0440\u044B\u0448* (that means *конкурс,розыгрыш*).
 -  **post.classification.model** - the model that allow identify competition posts. It has such structure: 
 ```
+#!json
+
 {"classification_groups":["key-word1,key-word2,key-word3","key-word4,key-word5,key-word6"]}
 ```
 which on logical level looks like 
 
 ```
+#!java
+
 (postMessage.contains(key-word1)||postMessage.contains(key-word2)||postMessage.contains(key-word3))
 &&
 (postMessage.contains(key-word4)||postMessage.contains(key-word5)||postMessage.contains(key-word6))

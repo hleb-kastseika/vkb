@@ -1,0 +1,55 @@
+apply plugin: 'java'
+
+version = '1.0'
+def mainClassName = 'com.last_khajiit.vkb.VKB'
+def fatJarFolder = 'build/libs/'
+def tempDistFolder = 'build/tmp-dist/'
+def confFolder = 'conf/'
+def distConfFolder = 'build/tmp-dist/conf/'
+def startupFileName = 'startup.bat'
+def startupScript = 'java -Dtinylog.configuration=conf/tinylog.properties -jar ' + project.name + '-' + version + '.jar'
+def distFolder = 'build/dist'
+
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    baseName = project.name
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task copyJar(dependsOn: fatJar, type: Copy) {
+	from fatJarFolder
+	into tempDistFolder
+}
+
+task copyConf(dependsOn: copyJar, type: Copy) {
+	from confFolder
+	into distConfFolder
+}
+
+task dist(dependsOn: copyConf, type:Zip) {
+	doFirst{
+		def f1 = new File(tempDistFolder+startupFileName)
+		f1.text = startupScript
+	}
+	from tempDistFolder
+	into project.name
+	destinationDir file(distFolder)
+	
+	doLast{
+		delete tempDistFolder
+	}
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.tinylog:tinylog:1.0.2'
+	compile 'org.json:json:20150729'
+	compile 'org.mapdb:mapdb:2.0-beta8'
+}

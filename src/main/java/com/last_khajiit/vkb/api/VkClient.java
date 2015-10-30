@@ -123,7 +123,7 @@ public class VkClient {
 		try {
 			String result = invokeApi("friends.add", Params.create().add("user_id", userId));
 			if (result.contains("error") && result.contains("captcha")) {
-				// process captcha
+				//TODO add captcha processing
 				Logger.error("CAPTCHA!!!!!!!!");
 			} else if (result.contains("response") && result.contains("1")) {
 				isRequestSuccessfull = true;
