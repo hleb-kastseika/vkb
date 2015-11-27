@@ -1,4 +1,4 @@
-# vkb - script for vk.com competitions
+# vkb - bot for vk.com competitions
 
 Script allows you to automate the searching and participation in random reposts competitions in vk.com.
 
