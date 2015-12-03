@@ -30,12 +30,6 @@ public final class PropertiesManager {
 	private static List<String> properties_files = new ArrayList<String>();
 
 	static {
-		/*
-		 * As I developed this project on Windows OS I hardcoded filepath
-		 * separator here and in some other places, so for building it on linux
-		 * of some other systems we need to modify these values (or rewrite file
-		 * reading with File.separator or system properties)
-		 */
 		properties_files.add("conf/vkb.properties");
 		properties_files.add("conf/vk.api.properties");
 	}
