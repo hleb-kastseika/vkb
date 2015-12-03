@@ -12,12 +12,13 @@ Script allows you to automate the searching and participation in random reposts 
 
 ### Requirements for building and running
 - Java 8
-- Gradle (I use 2.8 version, didn't check with previous)
-- some Windows OS (I developed it on Windows and hardcoded windows path separator "\". So, for correct running on other OS, modify it. I'll fix it a bit later).
+- Gradle 2.8 and latest
 - an account in vk.com that is not a pity to lose (admins are struggling with fake accounts and it can be banned)
 
 ### How to build, configure and run
 For **building the project** use Gradle. Go to the root project directory and run `gradle dist` command. It will generate zip archive in *build\dist* directory. Extract it somewhere and script is almost ready for running (just need to link it with your VK account and setup some properties).
+
+Also there is ability to deploy the bot to [Heroku](https://www.heroku.com/). This process is described [here](https://gist.github.com/last-khajiit/b6fa4eef443d3d753fce). 
 
 Now about the **configuration**.
 First, you need to have an account in vk.com, which you'll use for running the script. I would recommend to use an account that is not a pity to lose, because it can be banned for "strange activity".
