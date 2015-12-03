@@ -5,6 +5,7 @@ def mainClassName = 'com.last_khajiit.vkb.VKB'
 def fatJarFolder = 'build/libs/'
 def tempDistFolder = 'build/tmp-dist/'
 def confFolder = 'conf/'
+def dbFolder = 'build/tmp-dist/db/'
 def distConfFolder = 'build/tmp-dist/conf/'
 def startupFileName = 'startup.bat'
 def startupScript = 'java -Dtinylog.configuration=conf/tinylog.properties -jar ' + project.name + '-' + version + '.jar'
@@ -33,16 +34,22 @@ task dist(dependsOn: copyConf, type:Zip) {
 	doFirst{
 		def f1 = new File(tempDistFolder+startupFileName)
 		f1.text = startupScript
+		
+		includeEmptyDirs = true
+		new File(dbFolder).mkdirs()
 	}
 	from tempDistFolder
 	into project.name
 	destinationDir file(distFolder)
 	
-	doLast{
+	/*
+	doLast{			
 		delete tempDistFolder
 	}
+	*/
 }
 
+task stage(dependsOn: dist)
 
 repositories {
     mavenCentral()
