@@ -16,13 +16,13 @@ public final class PropertiesManager {
 	public final String DEFAULT_TIMER_START_DELAY = "0";
 	public final String DEFAULT_TASKS_EXECUTION_PERIOD = "14400000";
 
-	public final String DEFAULT_POSTED_DB_NAME = "db\\postedIds.db";
+	public final String DEFAULT_POSTED_DB_NAME = "db/postedIds.db";
 	public final String DEFAULT_POSTED_SET_NAME = "postedIds";
-	public final String DEFAULT_COMMUNITY_BLACK_LIST_DB_NAME = "db\\communityBlackList.db";
+	public final String DEFAULT_COMMUNITY_BLACK_LIST_DB_NAME = "db/communityBlackList.db";
 	public final String DEFAULT_COMMUNITY_BLACK_LIST_NAME = "communityBlackList";
-	public final String DEFAULT_POSTPONED_COMMUNITIES_DB_NAME = "db\\postponedCommunities.db";
+	public final String DEFAULT_POSTPONED_COMMUNITIES_DB_NAME = "db/postponedCommunities.db";
 	public final String DEFAULT_POSTPONED_COMMUNITIES_LIST_NAME = "postponedCommunities";
-	public final String DEFAULT_POSTPONED_USERS_DB_NAME = "db\\postponedUsers.db";
+	public final String DEFAULT_POSTPONED_USERS_DB_NAME = "db/postponedUsers.db";
 	public final String DEFAULT_POSTPONED_USERS_LIST_NAME = "postponedUsers";
 
 	public final String DEFAULT_PERCENTAGE_OF_REQUESTS_FOR_FRIENDSHIP = "2";
@@ -36,8 +36,8 @@ public final class PropertiesManager {
 		 * of some other systems we need to modify these values (or rewrite file
 		 * reading with File.separator or system properties)
 		 */
-		properties_files.add("conf\\vkb.properties");
-		properties_files.add("conf\\vk.api.properties");
+		properties_files.add("conf/vkb.properties");
+		properties_files.add("conf/vk.api.properties");
 	}
 
 	private Properties props = new Properties();
