@@ -29,6 +29,7 @@ The next thing you need to do - to configure some script properties. Go to *conf
 -  *access.token* - the key that is used for access your application to vk.com API.
 - *communities.search.words* - comma-separated list of key words, which will be used for searching of competition communities (e.g. *competition,gifts,prizes*).
 -  *post.classification.model* - the model that allow identify competition posts.
+
 Full list of properties, descriptions and example values you can find [here](https://github.com/last-khajiit/vkb/blob/master/properties.md). 
 
 
