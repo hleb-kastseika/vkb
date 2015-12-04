@@ -1,4 +1,4 @@
-There are five **required properties**:
+Properties for the bot are stored in *conf* directory. There are properties for logging in *tinylog.properties*, properties for vk.com API - *vk.api.properties* and properties for app - *vkb.properties* - the most interesting for us. There are five **required properties**:
 
 -  **current.user.id** - identification number of your account. You can get it from URL of your account page of from settings (e.g. 294238387)
 -  **application.id** - identification number of application (it's used for API requests to vk.com).  Go to [create app page](https://vk.com/editapp?act=create) and create new Standalone-application. After creation and verification you get application ID (e.g. 5062591).
@@ -26,3 +26,5 @@ Also there are a list of non-required properties:
 -  **posted.set.name**, **community.black.list.name**, **postponed.communities.list.name**, **postponed.users.list.name** - names of DB tables that are used for storing ID's of posts, communities and users (entities from previous list item). By default has such values respectively: "postedIds", "communityBlackList", "postponedCommunities", "postponedUsers".
 - **percentage.of.requests.for.friendhship** - value that is used for calculation of friendship requests amount (is also used for simulation of "real-user" behavior). Important - you already need to have some friends, because script looks for new friends among friends of friends. Default value is 2.
 -  **blocked.words** - comma-separated list of words, that are undesirable in competition posts and names of competition communities (for example *cosmetics,steam*). Here also preferable to use russian. By default is empty.
+
+I put an example of configured properties to gist - [vkb.properties](https://gist.github.com/last-khajiit/d5a4e2c6b40104d88e45).
