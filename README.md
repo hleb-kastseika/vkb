@@ -41,16 +41,6 @@ which on logical level looks like
 ```
 and if this condition is true, the post is determined as a competition-post. Key-words in each group are also list of comma-separated words and there may be any number of groups. For example, if we have such model *{"classification_groups":["competition,prize","repost,share"]}*, the script will mark all posts as a competition posts, which contains one or more words from first group ("competition" or "prize") and also contains one or more words from second group ("repost" or "share"). Like in case with *communities.search.words* property, here I also suggest use russian.
 
-Also there are a list of non-required properties:
-
--  **requests.delay** and **reposts.delay** - are used to avoid flood control and captcha verification. By default has values 1000 and 450000 (in milliseconds).
--  **timer.start.delay** and **tasks.execution.period** - are used for scheduling different tasks execution (java.util.Timer and java.util.TimerTask are used). By default has values 0 and 14400000 (in milliseconds too).
-- **random.reposts.communities.ids** - comma-separated list of community IDs (e.g. *-35283306,-22886007*, minus character is important here!). It's used for simulation of "real-user" behavior for avoiding blocking. By default is empty.
--  **posted.db.name**, **community.black.list.db.name**, **postponed.communities.db.name**, **postponed.users.db.name** - names of DB storage that are used for storing ID's of posts, communities and users (for avoiding repetitive reposts). By default has such values respectively: "db\\postedIds.db", "db\\communityBlackList.db", "db\\postponedCommunities.db", "db\\postponedUsers.db".
--  **posted.set.name**, **community.black.list.name**, **postponed.communities.list.name**, **postponed.users.list.name** - names of DB tables that are used for storing ID's of posts, communities and users (entities from previous list item). By default has such values respectively: "postedIds", "communityBlackList", "postponedCommunities", "postponedUsers".
-- **percentage.of.requests.for.friendhship** - value that is used for calculation of friendship requests amount (is also used for simulation of "real-user" behavior). Important - you already need to have some friends, because script looks for new friends among friends of friends. Default value is 2.
--  **blocked.words** - comma-separated list of words, that are undesirable in competition posts and names of competition communities (for example *cosmetics,steam*). Here also preferable to use russian. By default is empty.
-
 
 *Feel free to make pull requests!*
 
