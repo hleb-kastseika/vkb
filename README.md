@@ -10,6 +10,9 @@ Script allows you to automate the searching and participation in random reposts 
 - Search competition posts in already joined communities and repost it
 - Search competition communities, check walls for competitions, reposts these posts and join communities
 
+**Version 1.0 of VKB is available  for downloading in [release section](https://github.com/last-khajiit/vkb/releases/tag/v1.0).**
+
+
 ### Requirements for building and running
 - Java 8
 - Gradle 2.8 and later
