@@ -7,7 +7,9 @@ def tempDistFolder = 'build/tmp-dist/'
 def confFolder = 'conf/'
 def dbFolder = 'build/tmp-dist/db/'
 def distConfFolder = 'build/tmp-dist/conf/'
-def startupFileName = 'startup.bat'
+def startupBatFileName = 'startup.bat'
+def startupShFileName = 'startup.sh'
+def startupShFileHead = '#!/bin/sh\n'
 def startupScript = 'java -Dtinylog.configuration=conf/tinylog.properties -jar ' + project.name + '-' + version + '.jar'
 def distFolder = 'build/dist'
 
@@ -32,8 +34,11 @@ task copyConf(dependsOn: copyJar, type: Copy) {
 
 task dist(dependsOn: copyConf, type:Zip) {
 	doFirst{
-		def f1 = new File(tempDistFolder+startupFileName)
+		def f1 = new File(tempDistFolder+startupBatFileName)
 		f1.text = startupScript
+		
+		def f2 = new File(tempDistFolder+startupShFileName)
+		f2.text = startupShFileHead+startupScript
 		
 		includeEmptyDirs = true
 		new File(dbFolder).mkdirs()
