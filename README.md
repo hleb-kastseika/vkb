@@ -41,7 +41,7 @@ Full list of properties, descriptions and example values you can find [here](htt
 
 ---
 
-**Copyright © 2015 Last Khajiit <last.khajiit@gmail.com>**
+**Copyright © 2016 Last Khajiit <last.khajiit@gmail.com>**
 
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
