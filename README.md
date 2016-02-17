@@ -12,6 +12,8 @@ Script allows you to automate the searching and participation in random reposts 
 
 **Version 1.0 of VKB is available  for downloading in [release section](https://github.com/last-khajiit/vkb/releases/tag/v1.0).**
 
+**[Here](https://github.com/last-khajiit/dodo) I'm working on next generation of bot.**
+
 
 ### Requirements for building and running
 - Java 8
