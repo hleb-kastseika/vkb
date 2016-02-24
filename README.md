@@ -1,5 +1,7 @@
 # VKB - bot for vk.com competitions
 
+[![Build Status](https://travis-ci.org/last-khajiit/vkb.svg?branch=master)](https://travis-ci.org/last-khajiit/vkb)
+
 Script allows you to automate the searching and participation in random reposts competitions in vk.com.
 
 ### Main capabilities
