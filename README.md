@@ -1,6 +1,6 @@
 # VKB - bot for vk.com competitions
 
-[![Build Status](https://travis-ci.org/last-khajiit/vkb.svg?branch=master)](https://travis-ci.org/last-khajiit/vkb)
+[![release](https://img.shields.io/badge/release-v1.0-brightgreen.png?style=default)](https://github.com/last-khajiit/vkb/releases/latest) [![Build Status](https://travis-ci.org/last-khajiit/vkb.svg?branch=master)](https://travis-ci.org/last-khajiit/vkb)
 
 Script allows you to automate the searching and participation in random reposts competitions in vk.com.
 
@@ -11,8 +11,6 @@ Script allows you to automate the searching and participation in random reposts 
 - Search competition posts in VK search and repost it
 - Search competition posts in already joined communities and repost it
 - Search competition communities, check walls for competitions, reposts these posts and join communities
-
-**Version 1.0 of VKB is available  for downloading in [release section](https://github.com/last-khajiit/vkb/releases/tag/v1.0).**
 
 **[Here](https://github.com/last-khajiit/dodo) I'm working on next generation of bot.**
 
