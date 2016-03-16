@@ -18,7 +18,7 @@ Script allows you to automate the searching and participation in random reposts 
 ### Requirements for building and running
 - Java 8
 - Gradle 2.8 and later
-- An account in [vk.com](vk.com) that is not a pity to lose (admins are struggling with fake accounts and it can be banned)
+- An account in [vk.com](https://vk.com) that is not a pity to lose (admins are struggling with fake accounts and it can be banned)
 
 ### How to build, configure and run
 For **building the project** use Gradle. Go to the root project directory and run `gradle dist` command. It will generate zip archive in *build\dist* directory. Extract it somewhere and script is almost ready for running (just need to link it with your VK account and setup some properties).
