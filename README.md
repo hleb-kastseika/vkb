@@ -12,9 +12,6 @@ Script allows you to automate the searching and participation in random reposts 
 - Search competition posts in already joined communities and repost it
 - Search competition communities, check walls for competitions, reposts these posts and join communities
 
-**[Here](https://github.com/last-khajiit/dodo) I'm working on next generation of bot.**
-
-
 ### Requirements for building and running
 - Java 8
 - Gradle 2.8 and later
