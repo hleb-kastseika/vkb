@@ -33,6 +33,8 @@ The next thing you need to do - to configure some script properties. Go to *conf
 Full list of properties, descriptions and example values you can find [here](https://github.com/last-khajiit/vkb/blob/master/properties.md). 
 
 
+Also there is [Dockerfile](https://github.com/last-khajiit/docker-vkb) for VKB.
+
 
 
 *Feel free to make pull requests!*
