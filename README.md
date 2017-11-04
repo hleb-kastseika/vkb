@@ -1,6 +1,8 @@
 # VKB - bot for vk.com competitions
 
-[![release](https://img.shields.io/badge/release-vkb--1.0-brightgreen.svg?style=flat)](https://github.com/last-khajiit/vkb/releases/latest) [![Build Status](https://travis-ci.org/last-khajiit/vkb.svg?branch=master)](https://travis-ci.org/last-khajiit/vkb)
+[![Build Status](https://travis-ci.org/last-khajiit/vkb.svg?branch=master)](https://travis-ci.org/last-khajiit/vkb)
+[![release](https://img.shields.io/badge/release-vkb--1.0-brightgreen.svg?style=flat)](https://github.com/last-khajiit/vkb/releases/latest)
+[![License](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](https://raw.githubusercontent.com/last-khajiit/vkb/master/copying.txt)
 
 Script allows you to automate the searching and participation in random reposts competitions in vk.com.
 
