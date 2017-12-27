@@ -1,8 +1,8 @@
 # VKB - bot for vk.com competitions
 
-[![Build Status](https://travis-ci.org/last-khajiit/vkb.svg?branch=master)](https://travis-ci.org/last-khajiit/vkb)
-[![release](https://img.shields.io/badge/release-vkb--1.0-brightgreen.svg?style=flat)](https://github.com/last-khajiit/vkb/releases/latest)
-[![License](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](https://raw.githubusercontent.com/last-khajiit/vkb/master/copying.txt)
+[![Build Status](https://travis-ci.org/gleb-kosteiko/vkb.svg?branch=master)](https://travis-ci.org/gleb-kosteiko/vkb)
+[![release](https://img.shields.io/badge/release-vkb--1.0-brightgreen.svg?style=flat)](https://github.com/gleb-kosteiko/vkb/releases/latest)
+[![License](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](https://raw.githubusercontent.com/gleb-kosteiko/vkb/master/copying.txt)
 
 Script allows you to automate the searching and participation in random reposts competitions in vk.com.
 
@@ -24,7 +24,7 @@ For **building the project** use Gradle. Go to the root project directory and ru
 
 Now about the **configuration**.
 First, you need to have an account in vk.com, which you'll use for running the script. I would recommend to use an account that is not a pity to lose, because it can be banned for "strange activity".
-The next thing you need to do - to configure some script properties. Go to *conf* directory and find there *vkb.properties* file. Here is an example of configured properties - [vkb.properties](https://gist.github.com/last-khajiit/d5a4e2c6b40104d88e45). There are five **required properties**:
+The next thing you need to do - to configure some script properties. Go to *conf* directory and find there *vkb.properties* file. Here is an example of configured properties - [vkb.properties](https://gist.github.com/gleb-kosteiko/d5a4e2c6b40104d88e45). There are five **required properties**:
 
 -  *current.user.id* - identification number of your account.
 -  *application.id* - identification number of application (it's used for API requests to vk.com).
@@ -32,10 +32,10 @@ The next thing you need to do - to configure some script properties. Go to *conf
 - *communities.search.words* - comma-separated list of key words, which will be used for searching of competition communities (e.g. *competition,gifts,prizes*).
 -  *post.classification.model* - the model that allow identify competition posts.
 
-Full list of properties, descriptions and example values you can find [here](https://github.com/last-khajiit/vkb/blob/master/properties.md). 
+Full list of properties, descriptions and example values you can find [here](https://github.com/gleb-kosteiko/vkb/blob/master/properties.md). 
 
 
-Also there is [Dockerfile](https://github.com/last-khajiit/docker-vkb) for VKB.
+Also there is [Dockerfile](https://github.com/gleb-kosteiko/docker-vkb) for VKB.
 
 
 
@@ -44,8 +44,8 @@ Also there is [Dockerfile](https://github.com/last-khajiit/docker-vkb) for VKB.
 
 ---
 
-**Copyright © 2017 Khajiit <last.khajiit@gmail.com>**
+**Copyright © 2018 Gleb Kosteiko <gleb.kosteiko@gmail.com>**
 
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
-as published by Sam Hocevar. See the [COPYING](https://raw.githubusercontent.com/last-khajiit/vkb/master/copying.txt) file for more details.
+as published by Sam Hocevar. See the [COPYING](https://raw.githubusercontent.com/gleb-kosteiko/vkb/master/copying.txt) file for more details.
