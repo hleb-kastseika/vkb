@@ -27,4 +27,4 @@ Also there are a list of non-required properties:
 - **percentage.of.requests.for.friendhship** - value that is used for calculation of friendship requests amount (is also used for simulation of "real-user" behavior). Important - you already need to have some friends, because script looks for new friends among friends of friends. Default value is 2.
 -  **blocked.words** - comma-separated list of words, that are undesirable in competition posts and names of competition communities (for example *cosmetics,steam*). Here also preferable to use russian. By default is empty.
 
-I put an example of configured properties to gist - [vkb.properties](https://gist.github.com/last-khajiit/d5a4e2c6b40104d88e45).
+I put an example of configured properties to gist - [vkb.properties](https://gist.github.com/gleb-kosteiko/d5a4e2c6b40104d88e45).
