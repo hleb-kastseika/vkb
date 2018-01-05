@@ -15,8 +15,8 @@ Script allows you to automate the searching and participation in random reposts 
 - Search competition communities, check walls for competitions, reposts these posts and join communities
 
 ### Requirements for building and running
-- Java 8
-- Gradle 2.8 and later
+- Java 8 or higher
+- Gradle 2.8 or higher
 - An account in [vk.com](https://vk.com) that is not a pity to lose (admins are struggling with fake accounts and it can be banned)
 
 ### How to build, configure and run

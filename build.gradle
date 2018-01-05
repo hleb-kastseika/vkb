@@ -1,7 +1,7 @@
 apply plugin: 'java'
 
 version = '1.0'
-def mainClassName = 'com.last_khajiit.vkb.VKB'
+def mainClassName = 'com.vkb.Vkb'
 def fatJarFolder = 'build/libs/'
 def tempDistFolder = 'build/tmp-dist/'
 def confFolder = 'conf/'
@@ -14,7 +14,7 @@ def startupScript = 'java -Dtinylog.configuration=conf/tinylog.properties -jar '
 def distFolder = 'build/dist'
 
 task fatJar(type: Jar) {
-	manifest {
+    manifest {
         attributes 'Main-Class': mainClassName
     }
     baseName = project.name
@@ -23,35 +23,35 @@ task fatJar(type: Jar) {
 }
 
 task copyJar(dependsOn: fatJar, type: Copy) {
-	from fatJarFolder
-	into tempDistFolder
+    from fatJarFolder
+    into tempDistFolder
 }
 
 task copyConf(dependsOn: copyJar, type: Copy) {
-	from confFolder
-	into distConfFolder
+    from confFolder
+    into distConfFolder
 }
 
-task dist(dependsOn: copyConf, type:Zip) {
-	doFirst{
-		def f1 = new File(tempDistFolder+startupBatFileName)
-		f1.text = startupScript
-		
-		def f2 = new File(tempDistFolder+startupShFileName)
-		f2.text = startupShFileHead+startupScript
-		
-		includeEmptyDirs = true
-		new File(dbFolder).mkdirs()
-	}
-	from tempDistFolder
-	into project.name
-	destinationDir file(distFolder)
-	
-	/*
-	doLast{			
-		delete tempDistFolder
-	}
-	*/
+task dist(dependsOn: copyConf, type: Zip) {
+    doFirst {
+        def f1 = new File(tempDistFolder + startupBatFileName)
+        f1.text = startupScript
+
+        def f2 = new File(tempDistFolder + startupShFileName)
+        f2.text = startupShFileHead + startupScript
+
+        includeEmptyDirs = true
+        new File(dbFolder).mkdirs()
+    }
+    from tempDistFolder
+    into project.name
+    destinationDir file(distFolder)
+
+    /*
+    doLast{
+        delete tempDistFolder
+    }
+    */
 }
 
 task stage(dependsOn: dist)
@@ -62,6 +62,6 @@ repositories {
 
 dependencies {
     compile 'org.tinylog:tinylog:1.0.2'
-	compile 'org.json:json:20150729'
-	compile 'org.mapdb:mapdb:2.0-beta8'
+    compile 'org.json:json:20150729'
+    compile 'org.mapdb:mapdb:2.0-beta8'
 }
